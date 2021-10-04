@@ -5,6 +5,8 @@ import invoicesRoutes from './routes/invoices'
 import discountsRoutes from './routes/discounts'
 
 const app = express()
+//static folder
+app.use(express.static('docs'));
 
 //middlewares
 app.use(json())

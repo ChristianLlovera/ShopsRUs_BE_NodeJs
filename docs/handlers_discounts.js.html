@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Adding meta -->
+    
+
+    <!-- Adding external script-->
+    
+
+    <!-- Adding external style-->
+    
+
+    <!-- Adding scripts-->
+    
+
+    <!-- Adding style-->
+    
+
+    <!-- Adding overlay script-->
+    
+
+    <!-- Adding overlay style-->
+    
+
+
+    <title>
+      handlers/discounts.js
+    </title>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/third-party/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/third-party/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/reset.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-base.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-dark.css">
+    
+    <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    style="display:none">
+    <defs>
+        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
+            <g>
+                <path
+                    d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z" />
+                <path
+                    d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z" />
+            </g>
+        </symbol>
+        <symbol id='search-icon' viewBox="0 0 512 512">
+            <g>
+                <g>
+                    <path
+                        d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z" />
+                </g>
+            </g>
+            <g>
+                <g>
+                    <path
+                        d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z" />
+                </g>
+            </g>
+        </symbol>
+        <symbol id="down-icon" viewBox="0 0 16 16">
+            <path 
+                fill-rule="evenodd" 
+                clip-rule="evenodd" 
+                d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"
+            >
+            </path>
+        </symbol>
+    </defs>
+</svg>
+  </head>
+
+  <body>
+
+    <nav class="navbar" id="navbar">
+      <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">Home</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" alt="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><div class="accordion collapsed" id="6463725" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=""><a href="module-CustomersHandler.html">CustomersHandler</a></li><li class="accordion-list" id=""><a href="module-CustomersRouetes.html">CustomersRouetes</a></li><li class="accordion-list" id=""><a href="module-DiscountsHandler.html">DiscountsHandler</a></li><li class="accordion-list" id=""><a href="module-DiscountsRoutes.html">DiscountsRoutes</a></li><li class="accordion-list" id=""><a href="module-EnvoicesHandler.html">EnvoicesHandler</a></li><li class="accordion-list" id=""><a href="module-InvoicesRoutes.html">InvoicesRoutes</a></li></ul> </div></div>
+      
+
+    </nav>
+    <div class="navbar-ham" id="navbar-ham">
+      <div>
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+      </div>
+    </div>
+
+    <div id="main" class="main-content">
+      
+      <h1 id='page-title' class="page-title">
+        handlers/discounts.js
+      </h1>
+      
+
+      
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>//@ts-check
+/**@Module DiscountsHandler */
+import {Op} from 'sequelize'
+import discounts from '../database/models/discounts'
+import modelDiscounts from "../database/models/discounts"
+
+/**
+ * @typedef {Object} Customer
+ * @property {Number} id
+ * @property {String} name
+ * @property {Array} discounts
+ * @property {String} createdAt
+ * @property {String} updatedAt
+ */
+
+/**
+ * @typedef {Object} Item
+ * @property {Number} id
+ * @property {String} name
+ * @property {Number} quantity
+ * @property {Number} price
+ * @property {String} type
+ * @property {String} createdAt
+ * @property {String} updatedAt
+ */
+
+/**
+ * Esta función se encarga de validar si existe un descuento en la base de datos
+ * @param {Array&lt;String>} discounts Recibe una Array de Strings con los descuentos que se quieren validar
+ * @returns {Promise} Retorna true si existe el descuento, de lo contrario retorna false
+ */
+
+ export const validateDiscounts = async (discounts) => {
+     /** extrae la lista de descuentos en la base de datos*/
+     const discountsList = await modelDiscounts.findAll()
+     
+     /**@type {Boolean}*/
+     let validate = false
+     
+     /**recorre los descuentos que recibidos */
+     for (const row of discounts){
+         
+         validate = false /**cada vez que inicia el ciclo coloca el valor en false*/
+         
+         /**compara el valor del ciclo actual con la lista de descuentos */
+         for(const disc of discountsList){
+             /**si un valor coincide con la lista de descuentos cambia validate a true*/
+             if(disc.type === row){
+                 validate = true
+                }
+            }
+            
+            /** si en el bucle anterior no cabio a true es porque ya existe un valor
+             * inválido así que frena el ciclo para que no siga buscando 
+             */
+            if(!validate){return validate}
+            
+        }
+        
+        /** si todos los valores están en la lista de descuentos devuelve true
+         * de lo contrario devuelve false
+         */
+        return validate
+
+}
+
+/**
+ * devuelve el descuento de 5 por cada 100
+ * @param {Number} amount monto a validar
+ * @returns {Promise}
+ */
+ export const discountForAmount = (amount) =>{
+    
+    return new Promise(resolve=>{
+        const result = Math.trunc(amount / 100)*5;
+        resolve(result)
+    })
+
+}
+
+/**
+ * devuelve true si el cliente aplica para el descuento por años
+ * @param {Customer} customer datos del cliente
+ * @returns {Promise}
+ */
+ export const discountForYears = (customer) =>{
+
+    return new Promise(resolve=>{
+
+        /**@type {Object} */
+        const register = new Date(customer.createdAt)
+
+        /**@type {Object} */
+        const now = new Date()
+
+        /**año en milisegundos */
+        const months = 86400000 * 30.416666666666668
+        const years = months * 12
+
+        /**tiempo transcurrido en milisegundo */
+        const timeElapsed = now - register
+
+        /**se divide el tiempo transcurrido entre los milisegundos de un año 
+        * y redondea al entero más cercano 
+        * */
+        const totalYears = Math.floor(timeElapsed / years)
+
+        /** si la cantidad de años es mayor o igual a 2 retorna true de lo contrario retorna false*/
+        resolve(totalYears >= 2 ? true : false)
+    })
+
+}
+
+/**
+ * devuelve el descuento de porcentaje válido para un cliente
+ * @param {Customer} customer datos del cliente
+ * @returns {Promise}
+ */
+
+ export const discountPercentageValid = (customer) => {
+
+    return new Promise( async(resolve) =>{
+
+        /**Si no hay descuentos en el cliente revisa si es válido el descuento por año */
+        if(customer.discounts.length === 0){
+            const isValidForYear = await discountForYears(customer)
+            if(isValidForYear){
+                return resolve({discount:'years', percent:5})
+            }
+        }
+
+        /**Si el cliente tiene descuentos revisa cuál es el descuento mayor */
+        if(customer.discounts.length > 0){
+
+            const listDiscount = []
+
+            for(const discount of customer.discounts){
+               
+               const isValidDiscount = await validateDiscounts([discount])
+               if(isValidDiscount){
+                const result = await modelDiscounts.findOne({raw:true,where:{type: {[Op.iLike]: discount}}})
+                listDiscount.push(result)
+               }
+               
+            }
+
+            /** Ordena los descuento de mayor a menor */
+            listDiscount.sort((a,b) => b.percent - a.percent)
+            
+            /**Toma el descuento mayor */
+            const {type,percent} = listDiscount.shift()
+
+            /**devuelve los datos del descuento */
+            return resolve({discount:type, percent})
+
+        }
+
+        
+        resolve({discount:'n/a', percent:0})
+    })
+}
+
+/**
+ * 
+ * @param {Customer} customer cliente al que se le aplican los descuentos
+ * @param {Array&lt;Item>} items artículos a los que se les aplica el descuento
+ * @returns {Promise}
+ */
+export const totalDiscount = async (customer,items) =>{
+
+    /**
+     * calcula el porcentaje del monto requerido
+     * @param {Number} percent porcentaje válido
+     * @param {Number} amount monto a calcular
+     */
+    const percentage = (percent,amount) =>  (percent/ 100) * amount
+    
+
+    return new Promise(async(resolve)=>{
+        
+        /** inicio la variable de total en 0 */
+        let total = 0
+
+        /** reviso si hay descuentos válidos para el cliente */
+        const discountValid = await discountPercentageValid(customer)
+
+        /** si hay descuentos válidos para el cliente recorro los items */
+        if(discountValid.percent != 0){
+            const {percent} = discountValid
+
+            for(const item of items){
+
+                const {price,quantity} = item
+                const amount = price * quantity
+
+                /**si es un artículo no comestible aplico el descuento */
+                if(item.type === 'normal'){
+                    total += percentage(percent,amount)
+                }
+            }
+        }  
+            /**devuelvo el total a descontar */
+            resolve(total)
+    })
+}
+
+/**
+ * Devuelve una lista con todos los descuentos
+ * @param {Object} req Objeto con la solicitud http
+ * @param {Object} res Objeto con la respuesta http
+ */
+export const getAllDiscounts = async (req,res)=>{
+
+    /** Busca todos los descuentos en la base de datos */
+    const data = await modelDiscounts.findAll() 
+
+    /** Retorna status 200 con la lista de descuentos */
+    res.status(200).json([...data])
+}
+
+/**
+ * Crea un nuevo descuento en la base de datos
+ * @param {Object} req Objeto con la solicitud http
+ * @param {Object} res Objeto con la respuesta http
+ */
+export const createDiscount = async (req,res)=>{
+    /**Extrae los datos de type y percent del cuerpo de la solicitud y los guarda
+     * en unas constantes
+     */
+    const {type,percent} = req.body
+
+    /** Si no existe alguno de los datos necesarios para crear el nuevo descuento
+     * envía un error 400 y frena la ejecución de la función
+     */
+    if(!type || !percent){ 
+         res.status(400).json({message:'Invalid Request'})
+         return
+    }
+    
+    try{
+
+        /**Crea el nuevo descuento en la base de datos*/
+        const discount = await modelDiscounts.create({
+            type,
+            percent,
+            createdAt: new Date(),
+            updatedAt: new Date()
+        })
+
+        /**Devuelve un status 200 con los datos del descuento creado y un mensaje de éxito */
+        res.status(200).json({
+            message:'The Discount was created!',
+            data: discount
+        })
+        
+    }catch(err){
+        /** Si ya existe el tipo de descuento en la base de datos
+         * devuelve un error 409 y frena la ejecución
+         */
+        if(err.name === 'SequelizeUniqueConstraintError')
+        {
+            res.status(409).json({message:'Discount rate already exists'})
+            return
+        }
+
+        /**Si falla la creación del descuento envía un error 500 */
+        res.status(500).json({message:'Internal Server Error'})
+    }
+
+}
+
+/**
+ * Busca un descuento por tipo
+ * @param {Object} req Objeto con la solicitud http
+ * @param {Object} res Objeto con la respuesta http
+ */
+export const getDiscountByType = async (req,res)=>{
+    /**Extrae el valor de type de los parámetros y lo guarda en una constante */
+    const {type} = req.params
+
+    /**Busca el descuento en la base de datos donde el tipo sea igual al solicitado */
+    const discount = await modelDiscounts.findOne({where:{type: {[Op.iLike]: type} }})
+
+    /**Si no encuentra el tipo de descuento devuelve un error 404
+     * y frena la ejecución
+     */
+    if(!discount){
+        res.status(404).send({message:'Discount not Found'})
+        return
+    }
+
+    /**Devuelve el descuento por el tipo indicado con status 200 */
+    res.status(200).json(discount)
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    </div>
+
+    <footer class="footer" id="footer">
+      
+    </footer>
+
+    <script src="scripts/third-party/prettify.js"></script>
+    <script src="scripts/third-party/lang-css.js"></script>
+    <script type="text/javascript" src="scripts/misc.js"></script>
+
+    <script>prettyPrint();</script>
+    <script src="scripts/linenumber.js"></script>
+    <script src="scripts/fix-code-block.js"></script>
+    <script src="scripts/fix-navbar.js"></script>
+    
+      <script src="scripts/search.js"></script>
+      <script src="scripts/third-party/fuse.js"></script>
+      <script>
+        var list = [{"title":"CustomersHandler","link":"<a href=\"module-CustomersHandler.html\">CustomersHandler</a>"},{"title":"CustomersRouetes","link":"<a href=\"module-CustomersRouetes.html\">CustomersRouetes</a>"},{"title":"DiscountsHandler","link":"<a href=\"module-DiscountsHandler.html\">DiscountsHandler</a>"},{"title":"DiscountsRoutes","link":"<a href=\"module-DiscountsRoutes.html\">DiscountsRoutes</a>"},{"title":"EnvoicesHandler","link":"<a href=\"module-EnvoicesHandler.html\">EnvoicesHandler</a>"},{"title":"InvoicesRoutes","link":"<a href=\"module-InvoicesRoutes.html\">InvoicesRoutes</a>"}];
+        var options = 
+          setupSearch(list, options)
+      </script>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+  </body>
+
+</html>

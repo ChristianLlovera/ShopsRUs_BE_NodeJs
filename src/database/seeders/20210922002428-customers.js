@@ -3,7 +3,7 @@ export default {
 
     await queryInterface.bulkInsert('customers', [
       {
-        name: 'John Doe',
+        name: 'Jhon Doe',
         discounts: JSON.stringify(["employee"]),
         createdAt: new Date(),
         updatedAt: new Date()
@@ -20,7 +20,18 @@ export default {
         createdAt: '2019-09-21 21:40:52.821-04',
         updatedAt: '2019-09-21 21:40:52.821-04'
       },
-
+      {
+        name: 'Engel Rojas',
+        discounts: JSON.stringify([]),
+        createdAt: '2019-09-21 21:40:52.821-04',
+        updatedAt: '2019-09-21 21:40:52.821-04'
+      },
+      {
+        name: 'Nicole Moreno',
+        discounts: JSON.stringify([]),
+        createdAt: '2021-09-21 21:40:52.821-04',
+        updatedAt: '2021-09-21 21:40:52.821-04'
+      }
   ], {});
 
   },
