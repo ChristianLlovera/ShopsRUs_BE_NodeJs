@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "docs": "jsdoc -c jsdoc.json",
+    "docs:deploy":"gh-pages -d docs",
     "sequelize:model": "sequelize model:generate",
     "sequelize:seed": "sequelize seed:generate",
     "migrate": "sequelize db:migrate",
@@ -16,7 +17,7 @@
     "pretest": "cross-env NODE_ENV=test npm run reset:db",
     "test": "cross-env NODE_ENV=test jest --detectOpenHandles",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll --detectOpenHandles",
-    "prestart":"cross-env NODE_ENV=development npm run reset:db",
+    "prestart": "cross-env NODE_ENV=development npm run reset:db",
     "start": "cross-env NODE_ENV=development babel-node ./src/index.js"
   },
   "author": "Christian Llovera",
@@ -25,6 +26,7 @@
     "babel-jest": "^27.2.1",
     "clean-jsdoc-theme": "^3.2.8",
     "cross-env": "^7.0.3",
+    "gh-pages": "^3.2.3",
     "jest": "^27.2.1",
     "jsdoc": "^3.6.7",
     "jsdoc-http-plugin": "^0.3.2",

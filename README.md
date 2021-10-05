@@ -69,3 +69,6 @@ Crea un nuevo descuento, recibe como datos en formato json el tipo de descuento 
 
 #### -GET// api/invoices/:id
 Devuelve una factura por el id
+
+>Para ver una documentación más detallada visita:
+><a href="https://christianllovera.github.io/ShopsRUs_BE_NodeJs/" target="_blank">https://christianllovera.github.io/ShopsRUs_BE_NodeJs/</a>
