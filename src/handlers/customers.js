@@ -23,8 +23,8 @@ export const getAllCustomers = async (req,res)=>{
  * @param {Object} res Objeto con la respuesta http
  */
 export const createCustomer = async (req,res)=>{
-    /** extrae los datos de name y discounts del cuerpo de la solicitud 
-     * y las guarda en sus respectivas constantes por medio de destructuracion de objeto
+    /** Extrae los datos de name y discounts del cuerpo de la solicitud 
+     * y las guarda en sus respectivas constantes por medio de desestructuración de objeto
     */
     const {name, discounts} = req.body
 
